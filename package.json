@@ -1,14 +1,23 @@
 {
   "name": "phaser-template",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itimpg/phaser-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itimpg/phaser-template/issues"
+  },
+  "homepage": "https://github.com/itimpg/phaser-template#readme",
+  "description": ""
 }
