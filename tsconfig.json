@@ -1,0 +1,11 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "wwwroot/scripts/js"
+    },
+    "exclude": [
+        "node_modules",
+        "vscode",
+        "wwwroot/_lib"
+    ]
+}
