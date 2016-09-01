@@ -3,16 +3,6 @@
     "compilerOptions": {
         "outDir": "wwwroot/scripts/js",
         "module": "commonjs",
-        "target": "es6",
-        "experimentalDecorators": true,
-        "sourceMap": true
-    },
-    "exclude": [
-        "node_modules",
-        "vscode",
-        "wwwroot/_lib"
-    ],
-    "files": [
-        "wwwroot/_lib/phaser/typescript/phaser.d.ts"
-    ]
+        "target": "es6"
+    }
 }
