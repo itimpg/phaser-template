@@ -1,8 +1,19 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "outDir": "wwwroot/scripts/js",
-        "module": "commonjs",
-        "target": "es6"
-    }
+        "module": "none",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "outFile": "wwwroot/js/game.js"
+    },
+    "files": [
+        "wwwroot/_lib/phaser/typescript/phaser.d.ts"
+    ],
+    "include": [
+        "wwwroot/src"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }
