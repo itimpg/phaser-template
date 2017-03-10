@@ -1,7 +1,12 @@
 namespace Generator {
     export class JumpTables {
         private static _instance = null;
+
+        // velocities
         private _jumpVelocities: number[] = [];
+
+        // list of possible jumps for each jump velocities and position within CELL_SIZE
+        private _jumpDefs: Jump[][][] = [];
 
         public static get instance(): JumpTables {
             if (JumpTables._instance === null) {
@@ -12,6 +17,7 @@ namespace Generator {
 
         private constructor() {
             this.calculateJumpVelocities();
+            this.calculateJumpTables();
         }
 
         private calculateJumpVelocities(): void {
@@ -29,6 +35,34 @@ namespace Generator {
 
         public get maxJumpVelocity(): number {
             return this._jumpVelocities[this._jumpVelocities.length - 1];
+        }
+
+        private calculateJumpTables(): void {
+            // all jump velocities
+            for (let height = 0; height <= Parameters.HEIGHT_STEPS; height++) {
+                this._jumpDefs[height] = [];
+
+                // step from left to right on cell
+                for (let step = 0; step < Parameters.CELL_STEPS; step++) {
+                    this.calculateJumpCurve(step, height);
+                }
+            }
+        }
+
+        private calculateJumpCurve(step: number, jumpIndex: number): void {
+            // simulation timestep
+            let timestep = 1 / 60;
+
+            // take jump velocity we calclated previously
+            let velocity = this._jumpVelocities[jumpIndex];
+
+            // start at middle of first step to spread samples better over cell
+            // x and y positions are in pixels
+            let x = step * Parameters.CELL_SIZE / Parameters.CELL_STEPS + Parameters.CELL_SIZE / Parameters.CELL_STEPS / 2;
+
+            let y = 0;
+            // y = position in cells coordinates (row within grid)
+            let cellY = 0;
         }
 
         // ------------------
